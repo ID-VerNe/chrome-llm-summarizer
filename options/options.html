@@ -1,0 +1,38 @@
+<!-- chrome-llm-summarizer/options/options.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>LLM Summarizer 设置</title>
+  <link rel="stylesheet" href="options.css"> <!-- Optional: Link to CSS -->
+</head>
+<body>
+  <div class="container">
+    <h1>LLM Summarizer 设置</h1>
+    <p>在此配置您的LLM (Large Language Model) API 访问信息和总结提示语。</p>
+
+    <div id="status" class="status"></div> <!-- 用于显示保存状态 -->
+
+    <label for="api-key">API Key:</label>
+    <input type="password" id="api-key" placeholder="您的LLM API密钥" required>
+    <span class="info-icon" title="请输入您的LLM服务提供商提供的API密钥。例如: sk-...">ℹ️</span>
+
+    <label for="api-host">API Host/Endpoint:</label>
+    <input type="text" id="api-host" placeholder="LLM API的主机地址 (包含协议和路径)" required>
+    <span class="info-icon" title="请输入您的LLM API的完整端点URL。例如: https://api.openai.com/v1/chat/completions 或 https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=YOUR_KEY">ℹ️</span>
+
+    <label for="model-name">模型名称:</label>
+    <input type="text" id="model-name" placeholder="使用的LLM模型名称 (如 gpt-3.5-turbo)" required>
+    <span class="info-icon" title="请输入用于总结的LLM模型的名称。例如: gpt-3.5-turbo, gemini-pro。">ℹ️</span>
+
+    <label for="prompt-template">总结提示语模板:</label>
+    <textarea id="prompt-template" rows="10" placeholder="总结提示语模板，包含 {{content}} 占位符">{{content}}</textarea>
+    <span class="info-icon" title="自定义发送给LLM的提示语模板。{{content}} 会被替换成网页的实际内容。请务必保留 {{content}} 占位符。">ℹ️</span>
+
+
+    <button id="save-button">保存设置</button>
+  </div>
+
+  <script type="module" src="options.js"></script> <!-- Use type="module" for ES Modules -->
+</body>
+</html>

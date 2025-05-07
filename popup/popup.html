@@ -1,0 +1,33 @@
+<!-- chrome-llm-summarizer/popup/popup.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>LLM Summarizer</title>
+  <link rel="stylesheet" href="popup.css"> <!-- Optional: Link to CSS -->
+</head>
+<body>
+  <div class="container">
+    <h1>网页总结助手</h1>
+
+    <button id="summarize-button">总结当前网页</button>
+
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>正在获取内容并总结...</p>
+    </div>
+
+    <div id="result-container" class="result-container">
+      <p><strong>总结结果:</strong></p>
+      <div id="summary-output" class="summary-output">
+        <!-- Summary text will be displayed here -->
+      </div>
+       <div id="error-output" class="error-output">
+        <!-- Error messages will be displayed here -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="popup.js"></script> <!-- Use type="module" for ES Modules -->
+</body>
+</html>

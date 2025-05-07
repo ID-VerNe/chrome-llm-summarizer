@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "总结助手",
+  "version": "1.0",
+  "description": "获取网页内容并调用LLM进行总结",
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "options_ui": {
+    "page":"options/options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background/background.js",
+     "type": "module"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+      "<all_urls>"
+   ]
+}
