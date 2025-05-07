@@ -34,9 +34,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
         if (request.success) {
             logger.info('Summary successful. Displaying summary.');
+
+            const markdownText = request.summary;
+            const html = marked.parse(markdownText);
+            const cleanHtml = DOMPurify.sanitize(html);
+
             errorOutput.textContent = ''; // Clear any previous error
             hideElement(errorOutput); // Hide error div if there is no error
-            summaryOutput.textContent = request.summary;
+            summaryOutput.innerHTML = cleanHtml
             summaryOutput.marked = true; // Optional: if you use a markdown renderer, flag it
 
         } else {
